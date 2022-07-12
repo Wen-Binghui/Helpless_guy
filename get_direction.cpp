@@ -2,7 +2,7 @@
 #include <math.h>
 #include <opencv2/opencv.hpp>
 
-using namespace cv;
+using namespace cv;https://github.com/Wen-Binghui/Helpless_guy/blob/develop/get_direction.cpp
 using namespace std;
 
 void get_random_dis(float* rand_dis) {
@@ -62,7 +62,7 @@ int get_direction(float dx, float dy, float dz, float pos0, float pos1, float po
         // converting angle representation
         rotating_angle_in_z = int(pos2 * 180 / 3.1415926535 + 22.5) % 360;
         // adjust direction
-        direction_in_pose = dir_flag + rotating_angle_in_z / 45;
+        direction_in_pose = (dir_flag + rotating_angle_in_z / 45) % 8;
     }
 	else {
 		direction_in_pose = dir_flag;
